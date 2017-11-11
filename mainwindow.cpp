@@ -17,28 +17,29 @@ MainWindow::MainWindow(QWidget *parent) :
    QIcon iconPic2(pixMapPic2);
    QIcon iconPic1(pixMapPic1);
    QIcon iconPic4(pixMapPic4);
-   QTableWidgetItem tableItemPic1(iconPic1,"1");
-   QTableWidgetItem tableItemPic2(iconPic2,"2");
-   QTableWidgetItem tableItemPic3(iconPic3,"3");
-   QTableWidgetItem tableItemPic4(iconPic4,"4");
    ui->tableWidget->setItem(0,0,new QTableWidgetItem(iconPic1,"1"));
    ui->tableWidget->setItem(0,1,new QTableWidgetItem(iconPic2,"2"));
    ui->tableWidget->setItem(0,2,new QTableWidgetItem(iconPic3,"3"));
    ui->tableWidget->setItem(1,0,new QTableWidgetItem(iconPic4,"4"));
-   //ui->tableWidget->item(1,0)->setIcon(iconPic1);
-   //ui->tableWidget->item(0,1)->setIcon(iconPic2);
-   //ui->tableWidget->item(0,2)->setIcon(iconPic3);
-   //ui->tableWidget->item(1,0)->setIcon(iconPic4);
 
-   //ui->tableWidget->item(0,0)->setIcon(*iconPic1);
-//   ui->tableWidget->item(0,2)->setIcon(*iconPic2);
-//   ui->tableWidget->item(0,3)->setIcon(*iconPic3);
-//   ui->tableWidget->item(2,0)->setIcon(*iconPic4);
-
+   //connection de la Dialog
+   connect(ui->mDialogButton,SIGNAL(accepted()),this,SLOT(onDialogAccepted()));
+   connect(ui->mDialogButton,SIGNAL(rejected()),qApp,SLOT(quit()));
 
 }
 
 MainWindow::~MainWindow()
 {
+   qDebug("Destructeur");
    delete ui;
+}
+
+
+void MainWindow::onDialogAccepted()
+{
+
+}
+
+void MainWindow::onDialogRejected()
+{
 }
