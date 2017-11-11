@@ -48,15 +48,35 @@
       <item>
        <layout class="QGridLayout" name="layoutPictures">
         <item row="0" column="0">
-         <widget class="QCheckBox" name="checkBox">
-          <property name="text">
-           <string>CheckBox</string>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="selectionMode">
+           <enum>QAbstractItemView::MultiSelection</enum>
           </property>
           <property name="iconSize">
            <size>
-            <width>33</width>
-            <height>50</height>
+            <width>100</width>
+            <height>100</height>
            </size>
+          </property>
+          <property name="rowCount">
+           <number>3</number>
+          </property>
+          <property name="columnCount">
+           <number>3</number>
+          </property>
+          <row/>
+          <row/>
+          <row/>
+          <column/>
+          <column/>
+          <column/>
+          <item row="0" column="0"/>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>TextLabel</string>
           </property>
          </widget>
         </item>
@@ -79,7 +99,7 @@
      <x>0</x>
      <y>0</y>
      <width>512</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
