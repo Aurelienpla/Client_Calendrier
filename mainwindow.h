@@ -21,6 +21,13 @@ public slots:
 
 private:
    Ui::MainWindow *ui;
+   //Conserve les cooronnée de l'élément insérer actuel
+   int mCurrentInsertCol;
+   int mCurrentInsertRow;
+
+   //Ajoute une image au format QIcon dans QTableWidget à la fin dans la suite
+   //logique (ajout ligne par ligne)
+   void addIcon(QIcon icone);
 };
 
 #endif // MAINWINDOW_H
